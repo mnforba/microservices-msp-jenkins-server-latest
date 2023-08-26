@@ -14,7 +14,7 @@ provider "aws" {
 resource "aws_instance" "tf-jenkins-server" {
   ami           = var.ami
   instance_type = var.instance_type
-  key_name      = var.vprof
+  key_name      = var.mykey
   vpc_security_group_ids = [aws_security_group.tf-jenkins-sec-gr.id]
   iam_instance_profile = aws_iam_instance_profile.tf-jenkins-server-profile.name
   ebs_block_device {
